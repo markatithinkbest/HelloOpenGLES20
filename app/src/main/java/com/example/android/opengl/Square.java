@@ -15,12 +15,12 @@
  */
 package com.example.android.opengl;
 
+import android.opengl.GLES20;
+
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
-
-import android.opengl.GLES20;
 
 /**
  * A two-dimensional square for use as a drawn object in OpenGL ES 2.0.
@@ -58,10 +58,14 @@ public class Square {
     static float squareCoords[] = {
             -0.5f,  0.5f, 0.0f,   // top left
             -0.5f, -0.5f, 0.0f,   // bottom left
-             0.5f, -0.5f, 0.0f,   // bottom right
-             0.5f,  0.5f, 0.0f }; // top right
+//            -0.5f, -0.5f, 0.3f,   // bottom left, Mark 7/9 11:30
 
-    private final short drawOrder[] = { 0, 1, 2, 0, 2, 3 }; // order to draw vertices
+            0.5f, -0.5f, 0.0f,   // bottom right
+            0.5f,  0.5f, 0.0f }; // top right
+//    0.5f,  0.5f, 0.3f }; // top right, Mark 7/9 11:30
+
+
+private final short drawOrder[] = { 0, 1, 2, 0, 2, 3 }; // order to draw vertices
 
     private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
 
