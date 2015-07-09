@@ -24,7 +24,7 @@ import java.nio.FloatBuffer;
 /**
  * A two-dimensional triangle for use as a drawn object in OpenGL ES 2.0.
  */
-public class Triangle {
+public class Triangle2 {
 
     private final String vertexShaderCode =
             // This matrix member variable provides a hook to manipulate
@@ -56,25 +56,25 @@ public class Triangle {
     static float triangleCoords[] = {
             // in counterclockwise order:
 //            0.0f,  0.622008459f, 0.0f,   // top
-            0.0f,  0.5f, 0.0f,   // top
+            0.0f,  0.2f, 0.0f,   // top
 
 //            -0.5f, -0.311004243f, 0.0f,   // bottom left
-//            -1.0f, -0.311004243f, 0.0f,   // bottom left, Mark 7/9 11:00
-            -0.5f, -0.311004243f, 0.0f,   // bottom left, Mark 7/9 11:00
-            0.5f, -0.311004243f, 0.0f    // bottom right
+            -0.1f, -0.101004243f, 0.0f,   // bottom left, Mark 7/9 11:00
+    //        -0.5f, -0.311004243f, 0.0f,   // bottom left, Mark 7/9 11:00
+            0.1f, -0.101004243f, 0.0f    // bottom right
 
     };
     private final int vertexCount = triangleCoords.length / COORDS_PER_VERTEX;
     private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
 
 //    float color[] = { 0.63671875f, 0.76953125f, 0.22265625f, 0.0f };
-    float color[] = { 1.0f, 1.0f, 0.0f, 0.0f };// Red+Green=Yellow, Mark 7/9 11:00
+    float color[] = { 1.0f, 0.0f, 0.0f, 0.0f };// Red+Green=Yellow, Mark 7/9 11:00
 
 
     /**
      * Sets up the drawing object data for use in an OpenGL ES context.
      */
-    public Triangle() {
+    public Triangle2() {
         // initialize vertex byte buffer for shape coordinates
         ByteBuffer bb = ByteBuffer.allocateDirect(
                 // (number of coordinate values * 4 bytes per float)
